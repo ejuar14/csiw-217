@@ -1,1 +1,10 @@
 
+
+
+
+
+
+
+
+-- ERROR:  syntax error at or near "2025"
+-- LINE 4: ('Superman'2025-07-11,200,9000);

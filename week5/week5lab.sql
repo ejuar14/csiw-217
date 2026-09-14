@@ -1,4 +1,4 @@
-create database week5lab
+create database week5lab;
 
 CREATE TABLE products (
 id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,19 +12,19 @@ VALUES('Keyboard', 10),
 ('Headset', 12);
 
 alter table products
-add column description text
+add column description text;
   
 alter table products
-add column price numeric(7,2)
+add column price numeric(7,2);
   
 alter table products
-add column rating real
+add column rating real;
   
 alter table products 
-add column last_updated timestamp with time zone
+add column last_updated timestamp with time zone;
   
 alter table products 
-add column in_stock boolean
+add column in_stock boolean;
 
 UPDATE products
 SET description = 'Wireless Headset',
@@ -49,12 +49,12 @@ rating = 9.0,
 last_updated = '2026-09-10 11:30:00',
 in_stock = True
 WHERE product_name = 'Controller';
-06 is with daylight saving and 07 is without daylight savings
+06 is with daylight saving and 07 is without daylight savings;
 
 
 update products
 set price=56.899
-where product_name = 'Keyboard'
+where product_name = 'Keyboard';
 -- it rounded the number to the second decimal place 
 
 UPDATE products 
@@ -62,4 +62,12 @@ SET description = 'Wired keyboard',
 rating = 8.5,
 last_updated = '2025-12-10 11:45:00',
 in_stock= False
-WHERE product_name = 'Keyboard'
+WHERE product_name = 'Keyboard';
+
+SELECT product_name, price, FROM products;
+SELECT * FROM public.games;
+SELECT product_name, price, rating FROM products;
+SELECT product_name, price FROM products WHERE price > 60.00 or price = 60.00;
+SELECT product_name, in_stock FROM products WHERE in_stock = True;
+SELECT product_name, price FROM products ORDER BY price DESC;
+

@@ -66,3 +66,7 @@ SELECT book_name FROM books
 SELECT book_name, in_stock FROM books WHERE in_stock = false
 SELECT book_name, genre FROM books ORDER BY genre 
 SELECT book_name, price FROM books WHERE in_stock = true ORDER BY price DESC;
+
+--Delimiter is interesting in how it is used to specify what character your import or export file uses. 
+--Along with how in the queue, you can use it to do math and has square root and cube root.
+--Is it common to use delimited files or work with delimited files and why would you set it up that way?

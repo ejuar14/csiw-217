@@ -13,4 +13,6 @@ VALUES('The Maze Runner', 'James Dashner'),
 ('The Shadow over Innsmouth', 'H.P. Lovecraft');
 
 ALTER TABLE books ADD COLUMN genre text;
-ALTER TABLE books ADD COLUMN price numeric; 
+ALTER TABLE books ADD COLUMN price numeric;
+ALTER TABLE books ADD COLUMN last_updated timestamp;
+ALTER TABLE books ADD COLUMN in_stock boolean;

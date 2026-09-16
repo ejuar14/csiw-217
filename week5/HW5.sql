@@ -63,3 +63,6 @@ RENAME COLUMN price TO rating;
 
 SELECT * FROM books
 SELECT book_name FROM books
+SELECT book_name, in_stock FROM books WHERE in_stock = false
+SELECT book_name, genre FROM books ORDER BY genre 
+SELECT book_name, price FROM books WHERE in_stock = true ORDER BY price DESC;

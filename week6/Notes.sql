@@ -1,0 +1,22 @@
+--create table product_raw(id integer primary key, product_name varchar (25),brand varchar(30),category text, price numeric(10,2), stock integer);
+--Two ways to import CSV files
+--1. Is with SQL. 
+--copy product_raw FROM 'C:\Users\474773.CSITECH\Downloads\products_raw.csv' DELIMITER ',' CSV HEADER;
+--copy product_raw FROM 'C:\Users\474773.CSITECH\Downloads\products_raw.csv' WITH (format CSV , HEADER);
+--2. Is with the GUE
+-- select * from product_raw LIMIT 5
+-- step one creat table in relashon to the table CSV colume
+-- import going to the gui 
+-- comifming the file name and the delimiter, hearder is turn on
+-- after the dwonload is secessful cheak the table 
+
+-- Basic math
+-- SELECT price, stock, price*stock AS inventory_value FROM product_raw LIMIT 5
+-- select price+5 as price_increased from product_raw limit 5;
+-- select sum(price*stock)as total_inventory_value from product_raw
+-- select AVG(price) as average_price from product_raw
+-- select MIN(price), max(price) FROM product_raw
+-- select count(*) from product_raw
+-- Filtering with math
+-- select * FROM product_raw where price > 500 
+-- select category, sum(stock) from product_raw group by category having sum (stock)>5

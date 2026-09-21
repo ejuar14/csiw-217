@@ -4,3 +4,4 @@ SELECT * FROM product LIMIT 5
 SELECT product_name, price*stock FROM product
 SELECT AVG(price) FROM product
 SELECT MIN(price), MAX(price) FROM product
+SELECT count(*) FROM product

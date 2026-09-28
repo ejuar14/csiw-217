@@ -1,0 +1,82 @@
+-- Create a table that stores information about video games
+--CREATE TABLE games (
+    -- Automatically generates a unique ID for each game
+    --game_id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+
+    -- Stores the name of the game
+    --title varchar(100) NOT NULL,
+
+    -- Stores the genre of the game
+    --genre varchar(50),
+
+    -- Stores the price with 2 decimal places
+    --price numeric(6,2));
+
+-- Add three games to the games table
+--INSERT INTO games (title, genre, price)
+--VALUES
+    --('Elden Ring', 'RPG', 59.99),
+    --('Minecraft', 'Sandbox', 29.99),
+    --(-'Helldivers 2', 'Shooter', 39.99);
+
+-- Create a second table that stores game reviews
+-- CREATE TABLE reviews (
+    -- Automatically generates a unique ID for each review
+    --review_id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+
+    -- Connects each review to a game in the games table
+    --game_id integer REFERENCES games(game_id),
+	-- REFERENCES table_name(Column Name)
+	-- An FK (Foreign Key) is just a PK(Primary Key) from another table
+
+    -- Stores the review score
+   -- score integer);
+-- Add reviews and connect them to games using game_id
+--INSERT INTO reviews (game_id, score)
+--VALUES
+    (1, 10), -- Elden Ring
+    (2, 9),  -- Minecraft
+    (1, 8);  -- Elden Ring
+
+-- How are these connected 
+-- They are connected by the game_id <--> reviews.game_id
+-- PK uniquely identifies row
+-- PK: indentifies the record
+-- FK: connects to that record
+
+-- JOINS is used to join tables and allows the program to combine related information for us
+
+-- INNER JOIN gives a row that have a match to both table
+--SELECT game.title, reviews.score FROM games INNER JOIN reviews ON games.game_id = reviews.game_id
+
+-- LEFT JOIN keeps everything from the left side of the table 
+-- SELECT games.title, reviews.score FROM games LEFT JOIN reviews ON games.game_id = reviews.game_id
+
+-- table ALTASES
+-- we create aliases for the table name 
+--g in now games 
+--r is now reviews
+--SELECT g.title, r.score FROM games as g INNER JOIN reviews as r ON g.game_id=r.games_id WHERE r.score >=9 ORDER BY r.score ASC
+-- JOINS adds to the cammands and does not replace what has be preveusly tought 
+
+
+CREATE TABLE student(student_id integer PRIMARY KEY, student_name varchar (100), major text);
+INSERT INTO student(student_id,student_name,major);
+VALUES(401265, 'Sebastian Talamantes','networking');
+SELECT * from students;
+SELECT student_name FROM students;
+SELECT student_name FROM students WHERE major='networking'
+SELECT student_name FROM students WHERE major='networking' AND student_id = 401265
+-- OREDER BY 
+-- ASC is the low to high
+-- DESC is high to low
+-- FUNTIONS or math
+SELECT COUNT (*) FROM student 
+SELECT AVG (tuition_cost) FROM student
+SELECT MAX (tuitino_cost) FROM student 
+UPDATE students SET major = 'cyber' WHERE student_id = 102
+--ALTER changes the table itself 
+ALTER TABLE student ADD COLUMN tuition_cost numeric(10,2)
+-- NOT NULL requires a value, add NOT NULL after the data type 
+Student_name varchar(100) NOT NULL
+

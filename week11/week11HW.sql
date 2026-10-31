@@ -8,7 +8,7 @@ create index idx_category on products_big (category);
 create index idx_big_cat_price on products_big (price);
 explain analyze select * from products_big where category = 'price';
 set enable_seqscan=on;
--- With the index, it was faster, and without the index it was slower
--- When you execute the command
+-- With the index, it was faster, and without the index it was slower.
+-- When you execute the command.
 -- With the larger table, it is more useful to have an index since there is more data, so it would be slower for it to go through the table.
 -- If there is not a lot of data, it can choose to use the index if it is faster, but if it's not, then it will scan the whole table.

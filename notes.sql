@@ -39,3 +39,11 @@ explain analyze select * from products where category='Skincare';
 --(3,'keyborad', 100.99)
 
 --select customers.name, custumers.city, orders.product, orders.total from orders join customers on orders.custumer_id = customers.customer_id
+--create table fw_characters (character_name text primary key, age numeric(10,2), likes text)
+--create table factions (faction_name text primary key, charater_name text, postion text, gods_they_worship text, foreign key (character_name) references fw_characters (character_name))
+
+--create table students(student_id serial primary key,name text,email text,DOB integer);
+--create table courses(courses_id serial primary key, student_id int, courses_name text, credits numeric (10,2), foreign key(student_id) references students(student_id));
+--INSERT INTO students ("name", email, DOB)values('juan', 'juan10@email.com', 20050215),('brian', 'brian89@email.com', 20050922),('jake', 'jake.j13@email.com', 20091212);
+--insert into courses (student_id, courses_name, credits)values(1,'com101',3.0),(1,'chem101',3.0),(2,'eng101',3.0),(2,'into to weling',3.0),(3,'com101', 3.0);
+--SELECT students.name,courses.courses_name,courses.credits FROM courses JOIN students ON courses.student_id = students.student_id;
